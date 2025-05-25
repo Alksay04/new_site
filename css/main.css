@@ -20,6 +20,7 @@ body {
 
 #question_container {
     font-size: 3rem;
+    text-align: center;
 }
 
 #answers_container {
@@ -57,6 +58,42 @@ body {
     transition-timing-function: ease-in; */
 }
 
+.buttons_container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.next_button {
+    background-color: orange;
+    padding-inline: 0.4rem;
+    padding-block: 0.2rem;
+    font-size: 1.5rem;
+    width: fit-content;
+    height: fit-content;
+    border: white 2px solid;
+    border-radius: 5px;
+}
+
+@keyframes skip_button_animation {
+    0% {
+        color: orange;
+    }
+    50% {
+        color: orangered;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+.next_button:hover {
+    animation: skip_button_animation 2s infinite;
+}
+
 .skip_button {
     background-color: darkviolet;
     padding-inline: 0.4rem;
@@ -64,9 +101,6 @@ body {
     font-size: 1.5rem;
     width: fit-content;
     height: fit-content;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
     border: white 2px solid;
     border-radius: 5px;
 }
@@ -87,10 +121,34 @@ body {
     animation: skip_button_animation 2s infinite;
 }
 
+/* @keyframes correct_animation {
+    from {
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    to {
+        background-color: green;
+    }
+} */
+
 .correct {
-    background-color: green;
+    background-color: green
 }
+
+/* @keyframes wrong_animation {
+    from {
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    to {
+        background-color: red;
+    }
+} */
 
 .wrong {
     background-color: red;
+}
+
+.hidden {
+    display: none;
 }
